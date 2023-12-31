@@ -5,6 +5,7 @@
 package listaClase;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,34 +15,40 @@ public class PruebasMain {
 
     public static void main(String[] args) {
 
-        Alumnos a1 = new Alumnos("Eduardo", "Correa",
-                "Aranda", "1ºDAW");
-        Alumnos a2 = new Alumnos("Aiman", "Harrar",
-                "Daoud", "1ºDAW");
-        Alumnos a3 = new Alumnos("Tomás Ariel", "González",
-                "Atienza", "1ºDAW");
-        Alumnos a4 = new Alumnos("Victor", "Mena",
-                "Flores", "1ºDAW");
-        Alumnos a5 = new Alumnos("Antonio", "Ramírez",
-                "Navas", "1ºDAW");
-
-        ArrayList<Alumnos> alumnos = new ArrayList<>();
-
-        alumnos.add(a1);
-        alumnos.add(a2);
-        alumnos.add(a3);
-        alumnos.add(a4);
-        alumnos.add(a5);
-
-        System.out.println(a1.hashCode());
-        System.out.println(a2.hashCode());
-        System.out.println(a3.hashCode());
-        System.out.println(a4.hashCode());
-        System.out.println(a5.hashCode());
-
-        System.out.println(a1.equals(a5));
-        System.out.println(a2.equals(a3));
-        System.out.println(a3.equals(a1));
-
+        String menu = """
+                      ************************************
+                      1.- Mostrar Alumnos.
+                      2.- Elegir Alumnos, Manual.
+                      3.- Elegir Alumnos, Aleatoriamente.
+                      4.- Salir.
+                      ************************************
+                      """;
+        int opcionMenu = 0;
+        ArrayList<Alumnos> listaAlumnos = MetodosDeClase.meterAlumnos();
+        do {
+            do {
+                try {
+                    opcionMenu = Integer.parseInt(JOptionPane.showInputDialog(
+                            menu));
+                } catch (NumberFormatException nfe) {
+                    JOptionPane.showMessageDialog(null,
+                            "Debes de introducir una de las opciones"
+                            + " prueba con (1, 2, 3, 4)");
+                }
+            } while (opcionMenu < 1 || opcionMenu > 4);
+            switch (opcionMenu) {
+                case 1 -> {
+                    MetodosDeClase.mostrarAlumnos(listaAlumnos);
+                }
+                case 2 -> {
+                    JOptionPane.showMessageDialog(null,
+                            MetodosDeClase.sacarAlumnoManual(listaAlumnos));
+                }
+                case 3 -> {
+                    JOptionPane.showMessageDialog(null,
+                            MetodosDeClase.sacarAlumnoAleatorio(listaAlumnos));
+                }
+            }
+        } while (opcionMenu != 4);
     }
 }

@@ -1,5 +1,6 @@
-listaClase/Alumnos.class
-daw/EstructuraDatos.class
-temario/MainCliente.class
-listaClase/PruebasMain.class
-temario/Cliente.class
+daw\EstructuraDatos.class
+listaClase\Alumnos.class
+temario\MainCliente.class
+temario\Cliente.class
+listaClase\MetodosDeClase.class
+listaClase\PruebasMain.class

@@ -15,20 +15,21 @@ public class Alumnos {
     //Atributos
     final private int id;
     private String nombre;
-    private String apellido1;
-    private String apellido2;
     private String curso;
     private int asistencia;
+    private static int contador = 0;
 
     // Constructor
-    public Alumnos(String nombre, String apellido1,
-            String apellido2, String curso) {
-        this.id = new Random().nextInt(1_111_111, 9_999_999);
+    public Alumnos(String nombre, String curso) {
+        this.id = contador++;
         this.nombre = nombre;
-        this.apellido1 = apellido1;
-        this.apellido2 = apellido2;
         this.curso = curso;
         this.asistencia = 0;
+    }
+
+    //Métodos
+    public void incrementarAsistencia() {
+        this.asistencia++;
     }
 
     // Get y Set
@@ -42,22 +43,6 @@ public class Alumnos {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public String getApellido1() {
-        return apellido1;
-    }
-
-    public void setApellido1(String apellido1) {
-        this.apellido1 = apellido1;
-    }
-
-    public String getApellido2() {
-        return apellido2;
-    }
-
-    public void setApellido2(String apellido2) {
-        this.apellido2 = apellido2;
     }
 
     public String getCurso() {
@@ -80,14 +65,11 @@ public class Alumnos {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Alumnos{");
-        sb.append("id=").append(id);
-        sb.append(", nombre=").append(nombre);
-        sb.append(", apellido1=").append(apellido1);
-        sb.append(", apellido2=").append(apellido2);
-        sb.append(", curso=").append(curso);
-        sb.append(", asistencia=").append(asistencia);
-        sb.append('}');
+        sb.append("  id = ").append(id);
+        sb.append(", nombre = ").append(nombre);
+        sb.append(", curso = ").append(curso);
+        sb.append(", asistencia = ").append(asistencia);
+        sb.append("\n");
         return sb.toString();
     }
 
@@ -95,7 +77,7 @@ public class Alumnos {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 29 * hash + this.id;
+        hash = 83 * hash + this.id;
         return hash;
     }
 
