@@ -1,6 +1,10 @@
-daw\EstructuraDatos.class
-listaClase\Alumnos.class
-temario\MainCliente.class
+Carta\Palo.class
 temario\Cliente.class
 listaClase\MetodosDeClase.class
 listaClase\PruebasMain.class
+Carta\Naipe.class
+daw\EstructuraDatos.class
+listaClase\Alumnos.class
+temario\MainCliente.class
+Carta\Baraja.class
+Carta\Main.class
