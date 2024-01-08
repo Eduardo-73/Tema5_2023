@@ -22,8 +22,8 @@ public class Baraja {
     public Baraja() {
         arrayNaipe = new ArrayList<>();
         for (Palo palo : Palo.values()) {
-            for (int i = 0; i < TAMANIO; i++) {
-                Naipe nuevoNaipe = new Naipe(i + 1, palo);
+            for (int i = 1; i < TAMANIO; i++) {
+                Naipe nuevoNaipe = new Naipe(i, palo);
                 this.arrayNaipe.add(nuevoNaipe);
             }
         }
