@@ -22,13 +22,6 @@ public class LanzarDados {
     método para saber el número de veces que ha salido una cara
     método para borrar todas las caras indicadas como parámetro
      */
-    /**
-     * En un programa nuevo, crea dos listas de tamaño aleatorio de letras entre
-     * la 'a' y la 'z'. Estas listas deben tener entre 10 y 20 elementos. Una
-     * vez creadas las listas, imprime por pantalla sus elementos usando un
-     * foreach. Crea una tercera lista con los elementos de la primera que no
-     * están en la segunda. Imprime el resultado usando API Stream y lambdas.
-     */
     public static Random rd = new Random();
     private int numDado;
     private ArrayList<Integer> lista = new ArrayList<>();
