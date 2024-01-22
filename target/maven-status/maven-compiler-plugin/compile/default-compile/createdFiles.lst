@@ -1,6 +1,7 @@
 catalogo/CatalogoLibro.class
-conflictoGit/Conflicto.class
+catalogo/Libros.class
 carta/Baraja.class
+temario/EjemploMatriz.class
 catalogo/Libro.class
 daw/Coches.class
 daw/CatalogoCoches.class
